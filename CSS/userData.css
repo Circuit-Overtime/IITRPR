@@ -73,7 +73,7 @@ body
     box-shadow: inset 51px 5px 140px #a8828259,
    0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
    border: 1px solid rgba( 255, 255, 255, 0.18 );
-    top: 150%; /*change to 50%*/
+    top: 50%; /*change to 50%*/
     transition: 0.5s;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
@@ -91,7 +91,17 @@ body
     font-weight: 700;
     letter-spacing: 5px;
 }
-
+.loginForm > p
+{
+  position: absolute;
+  text-align: center;
+  width: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffc;
+  font-family: 'Source Code Pro', monospace;
+  top: 20%;
+}
 .register
 {
   position: absolute;
@@ -346,7 +356,7 @@ body
     top: 50%; /*change to 50%*/
     transition: 0.5s;
     left: 50%;
-    top: 50%; /* change to 50*/
+    top: 150%; /* change to 50*/
     transform: translateX(-50%) translateY(-50%);
 }
 .registerForm > .registerText
@@ -412,7 +422,17 @@ body
     background: linear-gradient(135deg, rgb(239, 247, 255) 0%, rgb(214, 229, 247) 100%);
   }
 
-
+.registerForm > p
+{
+  position: absolute;
+  text-align: center;
+  width: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffc;
+  font-family: 'Source Code Pro', monospace;
+  top: 15%;
+}
 .registerForm > .name-container {
     position: absolute;
     top: 25%;
@@ -520,6 +540,18 @@ body
     text-align: center;
   }
 
+  .registerForm > .password-container > .validPassword
+  {
+    position: absolute;
+    top: 50%;
+    left: 90%;
+    transform: translateY(-50%);
+    color: #ff0000;
+    text-shadow: 0 0 15px #000f08;
+    opacity: 0;
+    transition: 0.5s;
+    
+  }
 
   .registerForm > .confirmPassword-container {
     position: absolute;
@@ -545,11 +577,28 @@ body
     font-size: 15px;
     text-align: center;
   }
+
+  .registerForm > .confirmPassword-container > .validPassword
+  {
+    position: absolute;
+    top: 50%;
+    left: 90%;
+    transform: translateY(-50%);
+    color: #ff0000;
+    text-shadow: 0 0 15px #000f08;
+    opacity: 0;
+    transition: 0.5s;
+    
+  }
+
+
   
   .signup_button {
     position: absolute;
     top: 85%;
     left: 50%;
+    border: none;
+    outline: none;
     transform: translateX(-50%);
     background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
     color: white;

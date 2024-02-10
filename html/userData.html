@@ -7,25 +7,33 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <link rel="stylesheet" href="/CSS/userData.css">
+    <link rel="stylesheet" href="/CSS/loader.css">
 </head>
 <body>
+  <div class="loaderMask">
+  <div class="loader">
+    <span></span>
+</div>
+</div>
+
     <div class="majorContainer"></div>
     <div class="blob1"></div>
     <div class="blob2"></div>
    <div class="loginForm">
     <div class="loginText">Login</div>
+    <p class="errorMessage" id="errorMessageLogin"></p>
     <ion-icon name="person-add" class="register" id="register"></ion-icon>
     <div class="name-container" id="name-container">
         <ion-icon name="person"></ion-icon>
-        <input class="input" type="text" placeholder="Your Name Please!">
+        <input class="input" id="signinNameinp" type="text" placeholder="Your Name Please!" value="Ayush">
       </div>
 
       <div class="password-container" id="password-container">
         <ion-icon name="code-working"></ion-icon>
-        <input class="input" type="password" placeholder="Provide Password Please">
+        <input class="input" id="signinPasswordInp" type="password" placeholder="Provide Password Please">
       </div>
 
-      <button class="btn" type="button">
+      <button class="btn" id="signin_btn" type="button">
         <strong>Sign In</strong>
         <div id="container-stars">
           <div id="stars"></div>
@@ -43,7 +51,7 @@
    <div class="registerForm">
     <ion-icon name="log-in" class="login" id="login"></ion-icon>
     <div class="registerText">Register</div>
-
+    <p class="errorMessage" id="errorMessage"></p>
     <div class="name-container" >
         <ion-icon name="person"></ion-icon>
         <input class="input" type="text" placeholder="Your Name Please!" value="ayush" id="name-containerReg"> <ion-icon name="checkmark-circle" class="validUserName"></ion-icon>
@@ -56,12 +64,12 @@
 
       <div class="password-container" >
         <ion-icon name="code-working"></ion-icon>
-        <input class="input" type="password" placeholder="Provide Password Please" value="24564556" id="password-containerReg">
+        <input class="input" type="password" placeholder="Provide Password Please" value="24564556" id="password-containerReg"><ion-icon name="alert" class="validPassword" id="validPassword" title="Should match and be more than 6 characters"></ion-icon>
       </div>
 
       <div class="confirmPassword-container" >
         <ion-icon name="code-working"></ion-icon>
-        <input class="input" type="password" placeholder="Confirm Password Please" value="41564161" id="confirmPassword-containerReg">
+        <input class="input" type="password" placeholder="Confirm Password Please" value="41564161" id="confirmPassword-containerReg"><ion-icon name="alert" class="validPassword" id="validPasswordConf" title="Should match and be more than 6 characters"></ion-icon>
       </div>
 
       <button class="signup_button" id="signup_button"> Sign Up
