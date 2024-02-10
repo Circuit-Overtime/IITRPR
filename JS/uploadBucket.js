@@ -31,42 +31,42 @@ document.getElementById('imageInput').addEventListener('change', function(event)
     }
 });
 
-function uploadToFirebaseStorage(file)
-{
-    const storageRef = storage.ref();
-    const uploadTask = storageRef.child('Gujarat/' + file.name).put(file);
+// function uploadToFirebaseStorage(file)
+// {
+//     const storageRef = storage.ref();
+//     const uploadTask = storageRef.child(localStorage.getItem("userRegion")+"/" + file.name).put(file);
 
-    uploadTask.on('state_changed', 
-    function(snapshot){
-        // Observe state change events such as progress, pause, and resume
-        // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
-        var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        // console.log('Upload is ' + progress + '% done');
-        switch (snapshot.state) {
-            case firebase.storage.TaskState.PAUSED: // or 'paused'
-                // console.log('Upload is paused');
-                break;
-            case firebase.storage.TaskState.RUNNING: // or 'running'
-                // console.log('Upload is running');
-                break;
-        }
-    }, 
-    function(error) {
-        // Handle unsuccessful uploads
-        // console.error('Error uploading image:', error);
-        alert('An error occurred while uploading the image.');
-    }, 
-    function() {
-        // Handle successful uploads on complete
-        uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
-            tagToCreate = ` <div class="mItem">
-            <img src="${downloadURL}">
-          </div>`;
-          document.getElementById("masonry").innerHTML += tagToCreate;
-        });
-    }
-);
-}
+//     uploadTask.on('state_changed', 
+//     function(snapshot){
+//         // Observe state change events such as progress, pause, and resume
+//         // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+//         var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+//         // console.log('Upload is ' + progress + '% done');
+//         switch (snapshot.state) {
+//             case firebase.storage.TaskState.PAUSED: // or 'paused'
+//                 // console.log('Upload is paused');
+//                 break;
+//             case firebase.storage.TaskState.RUNNING: // or 'running'
+//                 // console.log('Upload is running');
+//                 break;
+//         }
+//     }, 
+//     function(error) {
+//         // Handle unsuccessful uploads
+//         // console.error('Error uploading image:', error);
+//         alert('An error occurred while uploading the image.');
+//     }, 
+//     function() {
+//         // Handle successful uploads on complete
+//         uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+//             tagToCreate = ` <div class="mItem">
+//             <img src="${downloadURL}">
+//           </div>`;
+//           document.getElementById("masonry").innerHTML += tagToCreate;
+//         });
+//     }
+// );
+// }
 
 
 
@@ -103,7 +103,7 @@ function compressAndUpload(file, originalFile) {
 
 function uploadCompressedToFirebaseStorage(blob, fileName, originalFile) {
     const storageRef = storage.ref();
-    const uploadTask = storageRef.child('Compressed_images/Gujarat/' + fileName).put(blob);
+    const uploadTask = storageRef.child('Compressed_images/'+localStorage.getItem("userRegion")+"/" + fileName).put(blob);
     
     uploadTask.on('state_changed', 
         function(snapshot){
