@@ -1,0 +1,48 @@
+body
+{
+    overflow: hidden;
+    background: #181818;
+}
+
+.blob1
+{
+    position: absolute;
+    height: 450px;
+    top: -55px;
+    left: -45px;
+    width: 450px;
+    background: #235881;
+    opacity: 0.8;
+    filter: blur(55px);
+    animation: slowRotate 40s linear infinite;
+    border-radius: 40% 20px 75% 10px;
+}
+.blob2
+{
+    position: absolute;
+    height: 450px;
+    top: 60%;
+    left: 70%;
+    width: 450px;
+    background: #3c2381;
+    opacity: 0.8;
+    filter: blur(55px);
+    animation: slowRotate 40s linear infinite;
+    border-radius: 40% 20px 75% 10px;
+}
+
+
+@keyframes slowRotate {
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    50%
+    {
+        transform: rotate(360deg);
+    }
+    100%
+    {
+        transform: rotate(0deg);
+    }
+}
