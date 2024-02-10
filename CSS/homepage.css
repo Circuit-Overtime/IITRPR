@@ -14,3 +14,22 @@ button:hover{
     transition-timing-function: ease-in;
     font-weight: bolder;
 }
+.masonry {
+    column-count: 4;
+    column-gap: 20px;
+}
+
+.item {
+    display: inline-block;
+    margin-bottom: 20px;
+    width: 100%;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
