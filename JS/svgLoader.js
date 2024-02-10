@@ -30,8 +30,9 @@ circleGroup.add(circ);
 
 }
 
+state_name = localStorage.getItem("userRegion").toUpperCase()
 var increase = Math.PI * 2 /80,
-text = s.text(70, 120, "LEGACY");
+text = s.text(70, 120, state_name);
 
 
 
@@ -95,9 +96,9 @@ circles.push(circ);
 circleGroup.add(circ);
 
 }
-
+state_name = localStorage.getItem("userRegion").toUpperCase()
 var increase = Math.PI * 2 /80,
-text = s.text(70, 120, "LEGACY");
+text = s.text(70, 120, state_name);
 
 
 

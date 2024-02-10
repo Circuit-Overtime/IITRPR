@@ -28,163 +28,29 @@
         <div class="wandparticleBackdrop" id="wandparticleBackdrop"></div>
     <div class="particlesWand" id="particleWandEffect"></div>
 
-
-    <div class="masonry">
-        <div class="mItem">
-          <img src="https://source.unsplash.com/random/300">
-        </div>
-      
-        <div class="mItem">
-          <img src="https://source.unsplash.com/random/100">
-        </div>
-      
-        <div class="mItem">
-          <img src="https://source.unsplash.com/random/50">
-        </div>
-      
-        <div class="mItem">
-          <img src="https://source.unsplash.com/random/600">
-        </div>
-      
-        <div class="mItem">
-          <img src="https://source.unsplash.com/random/200">
-        </div>
-      
-        <div class="mItem">
-          <img src="https://source.unsplash.com/random/500">
-        </div>
-      
-        <div class="mItem">
-          <img src="https://source.unsplash.com/random/400">
-        </div>
-      
-        <div class="mItem">
-          <img src="https://source.unsplash.com/random/30">
-        </div>
-        <div class="mItem">
-          <img src="https://source.unsplash.com/random/10">
-        </div>
-      
-        <div class="mItem">
-          <img src="https://source.unsplash.com/random/20">
-        </div>
-      
-        <div class="mItem">
-          <img src="https://source.unsplash.com/random/60">
-        </div>
-      
-        <div class="mItem">
-          <img src="https://source.unsplash.com/random/80">
-        </div>
-      
-        <div class="mItem">
-          <img src="https://source.unsplash.com/random/300">
-        </div>
-      
-        <div class="mItem">
-          <img src="https://source.unsplash.com/random/200">
-        </div>
-      
-        <div class="mItem">
-          <img src="https://source.unsplash.com/random/100">
-        </div>
-      
-        <div class="mItem">
-          <img src="https://source.unsplash.com/random/50">
-        </div>
-        <div class="mItem">
-          <img src="https://source.unsplash.com/random/600">
-        </div>
-      
-        <div class="mItem">
-          <img src="https://source.unsplash.com/random/500">
-        </div>
-      
-        <div class="mItem">
-          <img src="https://source.unsplash.com/random/400">
-        </div>
-      
-        <div class="mItem">
-          <img src="https://source.unsplash.com/random/30">
-        </div>
-        <div class="mItem">
-          <img src="https://source.unsplash.com/random/10">
-        </div>
-      
-        <div class="mItem">
-          <img src="https://source.unsplash.com/random/20">
-        </div>
-      
-        <div class="mItem">
-          <img src="https://source.unsplash.com/random/60">
-        </div>
-      
-        <div class="mItem">
-          <img src="https://source.unsplash.com/random/80">
-        </div>
-        <div class="mItem">
-          <img src="https://source.unsplash.com/random/300">
-        </div>
-      
-        <div class="mItem">
-          <img src="https://source.unsplash.com/random/200">
-        </div>
-      
-        <div class="mItem">
-          <img src="https://source.unsplash.com/random/100">
-        </div>
-      
-        <div class="mItem">
-          <img src="https://source.unsplash.com/random/50">
-        </div>
-        <div class="mItem">
-          <img src="https://source.unsplash.com/random/600">
-        </div>
-      
-        <div class="mItem">
-          <img src="https://source.unsplash.com/random/500">
-        </div>
-      
-        <div class="mItem">
-          <img src="https://source.unsplash.com/random/400">
-        </div>
-      
-        <div class="mItem">
-          <img src="https://source.unsplash.com/random/30">
-        </div>
-        <div class="mItem">
-          <img src="https://source.unsplash.com/random/10">
-        </div>
-      
-        <div class="mItem">
-          <img src="https://source.unsplash.com/random/20">
-        </div>
-      
-        <div class="mItem">
-          <img src="https://source.unsplash.com/random/60">
-        </div>
-      
-        <div class="mItem">
-          <img src="https://source.unsplash.com/random/80">
-        </div>
-      
-        <div class="mItem">
-            <img src="https://source.unsplash.com/random/10">
-          </div>
-
-      </div>
+    <canvas id="canvas" style="display: none;"></canvas>
+    <div class="masonry" id="masonry"></div>
     </div>
-
+    <input type="file" accept="image/jpeg" id="imageInput" style="display: none;">
     <div class="uploadImages" id="uploadImages">
         <span class="redirectWebsiteLogoBtn"><ion-icon name="server"></ion-icon></span>
         <span class="redirectWebsiteLogoTxt"> upload.asm </span>
         </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.4.1/snap.svg-min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+
+
       <script src="JS/particles.min.js"></script>
       <script src = "JS/particleEffectBackground.js"></script>
       <script src = "JS/particleEffectMagicWand.js"></script>
       <script src="JS/svgLoader.js"></script>
+      <script src="JS/uploadBucket.js"></script>
     
 </body>
 </html>

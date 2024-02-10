@@ -14,6 +14,7 @@ body
 {
 	width: 12px;
 	background-color: #F5F5F5;
+    display: none;
 }
 
 .masonryCont::-webkit-scrollbar-thumb
@@ -133,6 +134,7 @@ svg {
     top: 21%;
     left: 15%;
     z-index: 3;
+    
  }
  .wandparticleBackdrop
  {
@@ -147,7 +149,7 @@ svg {
     background-size: contain;
     background-repeat: no-repeat;
     overflow: auto;
-    filter: blur(15px);
+    filter: blur(25px);
     z-index: -1;
  }
  .particlesWand
@@ -166,14 +168,15 @@ svg {
 
 
 
-img {
-    width: 100%;
-  }
+
   .masonryCont
   {
     position: absolute;
-    left: 0;
-    top: 0;
+    left: 50%;
+    top: 50%;
+    height: 100%;
+    width: 100%;
+    transform: translateX(-50%) translateY(-50%);
     max-height: 100%;
     max-width: 100%;
     overflow-y: auto;
@@ -181,8 +184,6 @@ img {
     padding-right: 25px;
     padding-top: 100px;
     box-sizing: border-box;
-    transform-origin: center;
-    transform: scale(1);
   }
   .masonry {
     position: relative; /* Change absolute to relative */
@@ -190,13 +191,39 @@ img {
     column-count: 4;
     column-gap: 16px;
   }
-  
+
   .masonry .mItem {
-    display: inline-block;
+    display: block;
+    position: relative;
     margin-bottom: 16px;
     width: 100%;
   }
+
+  img {
+    position: relative;
+    object-fit: cover;
+    width: 100%;
+    display: inline-flex;
+  }
   
+  
+  .masonry .mItem > .compressedImagezone
+  {
+    position: absolute;
+    height: inherit;
+    width: inherit;
+    top: 0px;
+    left: 0;
+    display: inline;
+    transition: 0.5s;
+    opacity: 1;
+    z-index: 100;
+    filter: blur(5px);
+
+  }
+
+
+
   @media (max-width: 1199px) {
     .masonry {
       column-count: 3;

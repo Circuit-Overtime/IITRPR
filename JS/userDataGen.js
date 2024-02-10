@@ -8,8 +8,9 @@ const firebaseConfig = {
   };
 
   // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+  firebase.initializeApp(firebaseConfig);   
   const db = firebase.firestore();
+  const storage = firebase.storage();
   let timer;
   const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
