@@ -119,10 +119,9 @@ document.getElementById("signin_btn").addEventListener("click", () =>{
                     document.querySelector(".loaderMask").style.opacity = "0";
                 }
                 else
-                {   
-                    sessionStorage.setItem("userRegion", doc.data().region);
+                {   localStorage.setItem("farmerPodUser",loginName);
+                    localStorage.setItem("userRegion", doc.data().region);
                     location.replace("homepage.html");
-    
                 }
             }
             else
@@ -268,4 +267,19 @@ function typeWriterErrorHTML(idOfTextHolder, textToType, speed) {
          }
     }
     type(); // Call the function to start the typing effect
+}
+
+function checkUserOnLogin()
+{
+
+        if(localStorage.getItem("farmerPodUser") != null)
+        {
+
+            location.replace("homepage.html");
+        }
+    
+}
+
+window.onload = e => {
+    checkUserOnLogin();
 }
