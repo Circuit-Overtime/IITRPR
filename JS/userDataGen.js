@@ -107,29 +107,37 @@ document.getElementById("signin_btn").addEventListener("click", () =>{
     const loginPass = document.getElementById("signinPasswordInp").value;
     document.querySelector(".loaderMask").style.zIndex = "100";
     document.querySelector(".loaderMask").style.opacity = "1";
-    db.collection("users").doc(loginName).get().then((doc) => {
-        if (doc.exists) {
-            console.log(doc.data());
-            if(doc.data().password != loginPass)
+    if(loginName != "")
+    {
+        db.collection("users").doc(loginName).get().then((doc) => {
+            if (doc.exists) {
+                console.log(doc.data());
+                if(doc.data().password != loginPass)
+                {
+                    typeWriterErrorHTML("errorMessageLogin", "Wrong Password");
+                    document.querySelector(".loaderMask").style.zIndex = "-1";
+                    document.querySelector(".loaderMask").style.opacity = "0";
+                }
+                else
+                {   
+                    sessionStorage.setItem("userRegion", doc.data().region);
+                    location.replace("homepage.html");
+    
+                }
+            }
+            else
             {
-                typeWriterErrorHTML("errorMessageLogin", "Wrong Password");
+                typeWriterErrorHTML("errorMessageLogin", "Account Doesn't Exist, Sign Up")
                 document.querySelector(".loaderMask").style.zIndex = "-1";
                 document.querySelector(".loaderMask").style.opacity = "0";
             }
-            else
-            {   
-                sessionStorage.setItem("userRegion", doc.data().region);
-                location.replace("homepage.html");
-
-            }
-        }
-        else
-        {
-            typeWriterErrorHTML("errorMessageLogin", "Account Doesn't Exist, Sign Up")
-            document.querySelector(".loaderMask").style.zIndex = "-1";
-            document.querySelector(".loaderMask").style.opacity = "0";
-        }
-    })
+        })
+        
+    }
+    else 
+    {
+        typeWriterErrorHTML("errorMessageLogin", "Insufficient Information")
+    }
     
 })
 
