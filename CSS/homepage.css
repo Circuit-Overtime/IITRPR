@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+button{
+    background-color: #3144EF;
+    color: white;
+    border-radius: 11px;
+    width: 55%;
+}
+button:hover{
+    text-decoration: underline;
+    transition: 1s;
+    transition-timing-function: ease-in;
+    font-weight: bolder;
+}
