@@ -4,7 +4,7 @@
   <img src="https://firebasestorage.googleapis.com/v0/b/farmercrop-27a47.appspot.com/o/OfficialFiles%2Fintermiediate%20logo.png?alt=media&token=00f723d2-c0e1-4ef2-855f-d2e91f5153bc" alt="project-image">
 </p>
 
-Welcome to AgriLog.asm, a comprehensive solution designed to streamline data management for farmers and administrators. This web-based application serves as a platform for efficient organization, storage, and retrieval of agricultural data.
+Welcome to AgriLog.asm, a comprehensive solution designed to streamline data management for farmers and administrators. This web-based application serves as a platform for efficient organization, storage, and retrieval of agricultural data. The system server is designed to handle states of WB, HR, PB, MH, UP, GJ, KA, TN, AS only, but later can be extended to all the states of India and more.
 
 <p align="center">
   <img src="https://img.shields.io/badge/built_with-VS_Code-blue" alt="shields"> <img src="https://img.shields.io/badge/hosted%20in%20GitHub-8A2BE2" alt="shields"> <img src="https://img.shields.io/badge/with-Firebase_Database-ff9000" alt="shields">
@@ -70,6 +70,7 @@ Potential future enhancements for AgriLog.asm may include:
 - Implementation of real-time data synchronization for seamless collaboration among users.
 - Enhancement of user interface and user experience based on feedback and usability testing.
 - User Inputs are not Sanitized for this Project, taking into consideration that security is secondary in terms of the same.
+- The system server is designed to handle states of WB, HR, PB, MH, UP, GJ, KA, TN, AS only, but later can be extended to all the states of India and more.
 ```
 AgriLog.asm represents a collaborative effort aimed at addressing the challenges of agricultural data management. With its user-friendly interface, robust features, and scalable architecture, the system is poised to revolutionize the way farmers and administrators organize and utilize agricultural data, ultimately contributing to improved efficiency and productivity in the agricultural sector.
 ```
