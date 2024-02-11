@@ -1,6 +1,6 @@
 particlesJS("bg", {
     particles: {
-      number: { value: 90, density: { enable: true, value_area: 800 } },
+      number: { value: 90, density: { enable: true, value_area: 700 } },
       color: { value: "#ffffff" },
       shape: {
         type: "circle",
@@ -19,7 +19,7 @@ particlesJS("bg", {
         anim: { enable: false, speed: 40, size_min: 0.1, sync: false }
       },
       line_linked: {
-        enable: false,
+        enable: true,
         distance: 100,
         color: "#00ff59",
         opacity: 0.4,

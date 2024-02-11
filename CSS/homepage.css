@@ -3,6 +3,16 @@ body
     overflow: hidden;
     background: #181818;
 }
+.change_server{
+  position: absolute;
+  top: 5%;
+  left: 90%;
+  font-size: 44px;
+  filter: drop-shadow( 0 0 15px #ffc);
+  color: #ffc;
+  z-index: 10;
+  cursor: pointer;
+}
 .masonryCont::-webkit-scrollbar-track
 {
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);

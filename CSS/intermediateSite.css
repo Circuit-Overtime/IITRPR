@@ -1,9 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Josefin+Sans&family=Lora&family=Montserrat&family=Orbitron:wght@500&family=Protest+Riot&family=Reenie+Beanie&family=Sevillana&family=Source+Code+Pro&family=Style+Script&display=swap');
 body
 {
     overflow: hidden;
     background: #181818;
+    display: flex;
+}
+.majorContainer 
+{
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
 
+.logout{
+  position: absolute;
+  top: 5%;
+  left: 90%;
+  font-size: 44px;
+  filter: drop-shadow( 0 0 15px #ffc);
+  color: #ffc;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.serverError
+{
+  position: absolute;
+  top: 92%;
+  left: 53%;
+  transform: translateX(-50%);
+  font-family: 'Source Code Pro', monospace;
+  font-size: 24px;
+  color: #ffc;
+  opacity: 0.6;
+}
 .blob1
 {
     position: absolute;
@@ -17,6 +47,7 @@ body
     animation: slowRotate 40s linear infinite;
     border-radius: 40% 20px 75% 10px;
 }
+
 .blob2
 {
     position: absolute;
@@ -31,23 +62,6 @@ body
     border-radius: 40% 20px 75% 10px;
 }
 
-.buttons{
-    z-index: 22;
-    font-size: 12%;
-    font-weight: 500;
-    width: 34%;
-    border: none;
-    position: absolute;
-    top: 35%;
-    left: 34%;
-}
-.buttons .States{
-    background: none;
-    color: white;
-    border-radius: 10px 10px 10px -1px white,
-                    -10px -10px 10px -1px white;
-
-}
 
 
 
@@ -65,3 +79,245 @@ body
         transform: rotate(0deg);
     }
 }
+.optionContainer
+{
+    position: absolute;
+    width: 90%;
+    display: flex;
+    height: 100%;
+    top: 57%;
+    left: 57%;
+    transform: translateX(-50%) translateY(-5%);
+}
+ul
+{
+    position: relative;
+    display: flex;
+    transform-origin: center;
+    transform: scale(1.2);
+}
+ul li 
+{
+    list-style: none;
+}
+ul li label
+{
+    position: relative;
+}
+ul li label input[type="checkbox"]
+{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+ul li label .icon
+{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background: #18191f;
+    cursor: pointer;
+    color: #555;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    margin:  0 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: -1px -1px 4px rgba(255, 255, 255, 0.05),
+    4px 4px 6px rgba(0,0,0,0.2),
+    inset -1px -1px 4px rgba(255,255,255,0.05),
+    inset 4px 4px 6px rgba(0,0,0,0.2);
+}
+ul li label .icon::before
+{
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: calc(100% - 5px);
+    width: calc(50% - 2px);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background :rgba(255,255,255,0.05) ;
+}
+ul li label input[type = "checkbox"]:checked ~ .icon
+{
+    box-shadow: inset 0px 0px 2px rgba(255, 255, 255, 0.05),
+   inset 4px 4px 6px rgba(0,0,0,0.2);
+}
+ul li label .icon span
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    transition: 0.25s;
+}
+ul li label input[type = "checkbox"]:checked ~ .icon span
+{
+    color: #00f3ff;
+    text-shadow: 0 0 15px #00f3ff,
+    0 0 25px #00f3ff;
+    animation: changecolor 15s linear infinite;
+}
+@keyframes changecolor {
+    0%
+    {
+        filter: hue-rotate(0deg);
+    }   
+    100%
+    {
+        filter: hue-rotate(360deg);
+    }
+}
+
+
+
+:root {  
+    --purple: rgb(123, 31, 162);
+    --violet: rgb(103, 58, 183);
+    --pink: rgb(244, 143, 177);
+  }
+  
+  @keyframes background-pan {
+    from {
+      background-position: 0% center;
+    }
+    
+    to {
+      background-position: -200% center;
+    }
+  }
+  
+  @keyframes scale {
+    from, to {
+      transform: scale(0);
+    }
+    
+    50% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    
+    to {
+      transform: rotate(180deg);
+    }
+  }
+  
+
+  
+  h1 {
+    color: white;
+    font-size: clamp(4em, 2vw, 4em);
+    font-weight: 400;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 700;
+    margin: 0px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    font-family: 'Dancing Script', cursive;
+  }
+  
+  h1 > .magic {
+    position: relative;
+    display: inline-block;
+    position: relative;
+  }
+  
+  h1 > .magic > .magic-star {
+    --size: clamp(20px, 1.5vw, 30px);
+    
+    animation: scale 700ms ease forwards;
+    display: block;
+    height: var(--size);
+    left: var(--star-left);
+    position: absolute;
+    top: var(--star-top);
+    width: var(--size);
+  }
+  
+  h1 > .magic > .magic-star > svg {
+    animation: rotate 1000ms linear infinite;
+    display: block;
+    opacity: 0.7;
+  }
+  
+  h1 > .magic > .magic-star > svg > path {
+    fill: var(--violet);
+  }
+  
+  h1 > .magic > .magic-text {
+    animation: background-pan 3s linear infinite;
+    background: linear-gradient(
+      to right,
+      var(--purple),
+      var(--violet),
+      var(--pink),
+      var(--purple)
+    );
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;
+  }
+  
+
+  button {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10em;
+    height: 3.5em;
+    border: 3px ridge #149CEA;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    transition: 1s;
+    border-radius: 0.3em;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  button::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 3%;
+    width: 95%;
+    height: 40%;
+    background-color: #181818;
+    transition: 0.5s;
+    transform-origin: center;
+  }
+  
+  button::before {
+    content: "";
+    transform-origin: center;
+    position: absolute;
+    top: 80%;
+    left: 3%;
+    width: 95%;
+    height: 40%;
+    background-color: #181818;
+    transition: 0.5s;
+  }
+  
+  button:hover::before, button:hover::after {
+    transform: scale(0)
+  }
+  
+  button:hover {
+    box-shadow: inset 0px 0px 25px #1479EA;
+  }

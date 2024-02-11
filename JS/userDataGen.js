@@ -64,8 +64,7 @@ document.getElementById("signup_button").addEventListener("click", () => {
                         uid : user.uid,
                         displayName : regName,
                         dateCreated: date,
-                        region : "West Bengal",
-                        user_logo: "https://firebasestorage.googleapis.com/v0/b/psswdmanager-68a29.appspot.com/o/OfficialFiles%2Fuser_logo_defualt.jpg?alt=media&token=2e4e1159-2536-4f9e-866d-f9942f9e2d3d",
+                        region : "null",
                     })
                     .then(() => {
                         //do the needful to bring up the login page
@@ -121,8 +120,7 @@ document.getElementById("signin_btn").addEventListener("click", () =>{
                 }
                 else
                 {   localStorage.setItem("farmerPodUser",loginName);
-                    localStorage.setItem("userRegion", doc.data().region);
-                    location.replace("homepage.html");
+                    location.replace("inermediate.html");
                 }
             }
             else
@@ -276,7 +274,7 @@ function checkUserOnLogin()
         if(localStorage.getItem("farmerPodUser") != null)
         {
 
-            location.replace("homepage.html");
+            location.replace("inermediate.html");
         }
     
 }

@@ -102,6 +102,8 @@ function compressAndUpload(file, originalFile) {
 }
 
 function uploadCompressedToFirebaseStorage(blob, fileName, originalFile) {
+    document.getElementById("change_server").style.opacity = "0.4";
+    document.getElementById("change_server").style.pointerEvents = "none";
     const storageRef = storage.ref();
     const uploadTask = storageRef.child('Compressed_images/'+localStorage.getItem("userRegion")+"/" + fileName).put(blob);
     
@@ -175,7 +177,8 @@ function uploadOriginalImage(originalFile, fileName)
 
         });
 
-
+        document.getElementById("change_server").style.opacity = "1";
+    document.getElementById("change_server").style.pointerEvents = "all";
     }
 );
 }
@@ -227,8 +230,18 @@ function updateDisplay()
 
 
 
+window.onload = e =>
+{
+    document.querySelector(".loaderMask").style.opacity = "1";
+    document.querySelector(".loaderMask").style.zIndex = "100";
+    setTimeout(() => {
+        updateDisplay();
+        document.querySelector(".loaderMask").style.opacity = "0";
+        document.querySelector(".loaderMask").style.zIndex = "-1";
+    }, 1000);
 
-updateDisplay();
+}
+
 //https://firebasestorage.googleapis.com/v0/b/farmercrop-27a47.appspot.com/o/Compressed_images%2FGujarat0.jpg?alt=media&token=7df1b88b-6825-4e50-b380-325cbfb6d7d1
 // https://firebasestorage.googleapis.com/v0/b/farmercrop-27a47.appspot.com/o/Compressed_images%2FGujarat%2FDSCN0192.JPG?alt=media&token=d5b5d634-bb09-4f9d-b5bd-23b354a80388***https://firebasestorage.googleapis.com/v0/b/farmercrop-27a47.appspot.com/o/Compressed_images%2FGujarat%2FDSCN0192.JPG?alt=media&token=d5b5d634-bb09-4f9d-b5bd-23b354a80388
 
@@ -251,3 +264,14 @@ setInterval(() => {
             }
         });
 }, 1000);
+
+document.getElementById("change_server").addEventListener("click", () => {
+    location.replace("inermediate.html");
+})
+// db.collection("users").doc(localStorage.getItem("farmerPodUser"))
+//         .onSnapshot((doc) => {
+//             if(doc.data().allowed = false)
+//             {
+
+//             }
+//         })
