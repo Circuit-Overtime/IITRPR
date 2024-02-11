@@ -175,7 +175,10 @@ function uploadOriginalImage(originalFile, fileName)
             updateDisplay();
         })
 
-        });
+        });    if(localStorage.getItem("farmerPodUser") == null)
+        {
+            location.replace("userData.html");
+        }
 
         document.getElementById("change_server").style.opacity = "1";
     document.getElementById("change_server").style.pointerEvents = "all";
@@ -234,12 +237,18 @@ window.onload = e =>
 {
     document.querySelector(".loaderMask").style.opacity = "1";
     document.querySelector(".loaderMask").style.zIndex = "100";
-    setTimeout(() => {
-        updateDisplay();
-        document.querySelector(".loaderMask").style.opacity = "0";
-        document.querySelector(".loaderMask").style.zIndex = "-1";
-    }, 1000);
-
+    if(localStorage.getItem("farmerPodUser") == null)
+    {
+        location.replace("userData.html");
+    }
+    else 
+    {
+        setTimeout(() => {
+            updateDisplay();
+            document.querySelector(".loaderMask").style.opacity = "0";
+            document.querySelector(".loaderMask").style.zIndex = "-1";
+        }, 1000);
+    }
 }
 
 //https://firebasestorage.googleapis.com/v0/b/farmercrop-27a47.appspot.com/o/Compressed_images%2FGujarat0.jpg?alt=media&token=7df1b88b-6825-4e50-b380-325cbfb6d7d1

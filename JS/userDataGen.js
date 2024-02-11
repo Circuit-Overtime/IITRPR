@@ -214,7 +214,7 @@ function isPassword(pass)
 document.getElementById("password-containerReg").addEventListener("input", () => {
     regPass = document.getElementById("password-containerReg").value;
     regconfPass = document.getElementById("confirmPassword-containerReg").value;
-    if(isPass(regPass))
+    if(isPassword(regPass))
     {
         document.getElementById("validPassword").style.opacity = "0";
         document.getElementById("validPasswordConf").style.opacity = "0";
@@ -231,7 +231,7 @@ document.getElementById("password-containerReg").addEventListener("input", () =>
 document.getElementById("confirmPassword-containerReg").addEventListener("input", () => {
     regPass = document.getElementById("password-containerReg").value;
     regconfPass = document.getElementById("confirmPassword-containerReg").value;
-    if(isPass(regPass))
+    if(isPassword(regPass))
     {
         document.getElementById("validPassword").style.opacity = "0";
         document.getElementById("validPasswordConf").style.opacity = "0";
@@ -282,3 +282,28 @@ function checkUserOnLogin()
 window.onload = e => {
     checkUserOnLogin();
 }
+
+
+document.getElementById("SeePwd").addEventListener("click", () => {
+    document.getElementById("SeePwd").classList.contains("hidden") ? (document.getElementById("SeePwd").classList.remove("hidden")) (document.getElementById("SeePwd").setAttribute("name", "eye-off")) : (document.getElementById("SeePwd").classList.add("hidden")) (document.getElementById("SeePwd").setAttribute("name", "eye"));
+});
+
+document.getElementById("SeePwdReg").addEventListener("click", () => {
+    document.getElementById("SeePwdReg").classList.contains("hidden") ? (document.getElementById("SeePwdReg").classList.remove("hidden")) (document.getElementById("SeePwdReg").setAttribute("name", "eye-off")) : (document.getElementById("SeePwdReg").classList.add("hidden")) (document.getElementById("SeePwdReg").setAttribute("name", "eye"));
+});
+
+
+document.getElementById("SeePwdConf").addEventListener("click", () => {
+    document.getElementById("SeePwdConf").classList.contains("hidden") ? (document.getElementById("SeePwdConf").classList.remove("hidden")) (document.getElementById("SeePwdConf").setAttribute("name", "eye-off")) : (document.getElementById("SeePwdConf").classList.add("hidden")) (document.getElementById("SeePwdConf").setAttribute("name", "eye"));
+});
+
+function togglePasswordvisibility()
+{
+    document.getElementById("SeePwd").classList.contains("hidden") ? document.getElementById("signinPasswordInp").setAttribute("type", "password") : document.getElementById("signinPasswordInp").setAttribute("type", "text");
+    
+    document.getElementById("SeePwdReg").classList.contains("hidden") ? document.getElementById("password-containerReg").setAttribute("type", "password") : document.getElementById("password-containerReg").setAttribute("type", "text");
+    document.getElementById("SeePwdConf").classList.contains("hidden") ? document.getElementById("confirmPassword-containerReg").setAttribute("type", "password") : document.getElementById("confirmPassword-containerReg").setAttribute("type", "text");
+}
+setInterval(() => {
+    togglePasswordvisibility();
+}, 500);

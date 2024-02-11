@@ -92,30 +92,39 @@ document.getElementById("selectServer").addEventListener("click", () => {
 
 window.onload = e => 
 {
+
     document.querySelector(".loaderMask").style.opacity = "1";
     document.querySelector(".loaderMask").style.zIndex = "100";
 
-    db.collection("users").doc(localStorage.getItem("farmerPodUser")).get().then((doc) => {
-        if(doc.data().region == "null")
-        {
-            document.querySelector(".loaderMask").style.opacity = "0";
-            document.querySelector(".loaderMask").style.zIndex = "-1";
-            typeWriterErrorHTML("serverError", "Please Select a Server to Redirect");
-        }
-        else
-        { 
-            document.querySelector(".loaderMask").style.opacity = "0";
-            document.querySelector(".loaderMask").style.zIndex = "-1";
-            serverDisplayText = "You have "+doc.data().region+" Server as Default...";
-            document.getElementById(doc.data().region).checked = true;
-            typeWriterErrorHTML("serverError", serverDisplayText);
-            localStorage.setItem("userRegion", doc.data().region);
-            // setTimeout(() => {
-            //     location.replace("homepage.html");
-            // }, 1500);
-            
-        }
-    });
+    if(localStorage.getItem("farmerPodUser") == null)
+    {
+        location.replace("userData.html");
+    }
+    else 
+    {
+        db.collection("users").doc(localStorage.getItem("farmerPodUser")).get().then((doc) => {
+            if(doc.data().region == "null")
+            {
+                document.querySelector(".loaderMask").style.opacity = "0";
+                document.querySelector(".loaderMask").style.zIndex = "-1";
+                typeWriterErrorHTML("serverError", "Please Select a Server to Redirect");
+            }
+            else
+            { 
+                document.querySelector(".loaderMask").style.opacity = "0";
+                document.querySelector(".loaderMask").style.zIndex = "-1";
+                serverDisplayText = "You have "+doc.data().region+" Server as Default...";
+                document.getElementById(doc.data().region).checked = true;
+                typeWriterErrorHTML("serverError", serverDisplayText);
+                localStorage.setItem("userRegion", doc.data().region);
+                // setTimeout(() => {
+                //     location.replace("homepage.html");
+                // }, 1500);
+                
+            }
+        });
+    }
+
 }
 
 function typeWriterErrorHTML(idOfTextHolder, textToType, speed) {
@@ -143,6 +152,6 @@ document.getElementById("logout").addEventListener("click", () => {
 })
 
 document.getElementById("logout").addEventListener("dblclick", () => {
-    localStorage.clear();
+    localStorage.removeItem("farmerPodUser");
     location.replace("userData.html");
 })
