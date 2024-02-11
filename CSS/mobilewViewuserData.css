@@ -1,0 +1,25 @@
+@media only screen and (max-width: 600px) {
+    *
+    {
+        -webkit-tap-highlight-color : transparent;
+    }
+    .loginForm {
+        width: 90%; /* Adjusted width for smaller screens */
+        max-width: 300px; /* Maximum width to maintain readability */
+    }
+    .registerForm {
+        width: 90%; /* Adjusted width for smaller screens */
+        max-width: 300px; /* Maximum width to maintain readability */
+    }
+    .blob1,
+    .blob2
+    {
+        display: none;
+    }
+    .login
+    {
+        left: 88%;
+        top: 5%;
+    }
+
+}

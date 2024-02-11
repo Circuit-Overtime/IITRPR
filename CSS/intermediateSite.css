@@ -47,7 +47,7 @@ body
   left: 53%;
   transform: translateX(-50%);
   font-family: 'Source Code Pro', monospace;
-  font-size: 24px;
+  font-size: 20px;
   color: #ffc;
   opacity: 0.6;
 }
@@ -99,11 +99,12 @@ body
 .optionContainer
 {
     position: absolute;
-    width: 90%;
+    width: 100%;
     display: flex;
+    flex-wrap: wrap;
     height: 100%;
     top: 57%;
-    left: 57%;
+    left: 56%;
     transform: translateX(-50%) translateY(-5%);
 }
 ul
@@ -112,6 +113,7 @@ ul
     display: flex;
     transform-origin: center;
     transform: scale(1.2);
+    margin-bottom: 5px;
 }
 ul li 
 {

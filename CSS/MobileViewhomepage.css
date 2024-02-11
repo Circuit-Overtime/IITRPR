@@ -1,0 +1,43 @@
+@media only screen and (max-width: 600px) {
+    *
+    {
+        -webkit-tap-highlight-color : transparent;
+    }
+    .blob1,
+    .blob2
+    {
+        display: none;
+    }
+    .masonryCont::-webkit-scrollbar
+    {
+        display: none;
+    }
+    #wand
+    {
+        left: 47%;
+        top: -120px;
+        z-index: 80;
+    }
+    .wandparticleBackdropCut
+    {
+        width: 400px;
+    }
+    .wandparticleBackdrop
+    {
+        top: -160px;
+        transform: translateX(-50%) scale(0.9);
+    }
+    svg
+    {
+        transform: translateY(-310px) translateX(6%);
+        font-size: 0.9em;
+        z-index: 90;
+    }
+    .change_server
+    {
+        top: 4.3%;
+        left: 82%;
+        color: #181818;
+        font-size: 20px;
+    }
+}
