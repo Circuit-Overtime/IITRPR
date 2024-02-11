@@ -31,6 +31,25 @@ body
     border-radius: 40% 20px 75% 10px;
 }
 
+.buttons{
+    z-index: 22;
+    font-size: 12%;
+    font-weight: 500;
+    width: 34%;
+    border: none;
+    position: absolute;
+    top: 35%;
+    left: 34%;
+}
+.buttons .States{
+    background: none;
+    color: white;
+    border-radius: 10px 10px 10px -1px white,
+                    -10px -10px 10px -1px white;
+
+}
+
+
 
 @keyframes slowRotate {
     0%
