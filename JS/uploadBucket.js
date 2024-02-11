@@ -104,6 +104,9 @@ function compressAndUpload(file, originalFile) {
 function uploadCompressedToFirebaseStorage(blob, fileName, originalFile) {
     document.getElementById("change_server").style.opacity = "0.4";
     document.getElementById("change_server").style.pointerEvents = "none";
+    document.getElementById("uploadImages").style.opacity = "0.4";
+    document.getElementById("uploadImages").style.pointerEvents = "none";
+    
     const storageRef = storage.ref();
     const uploadTask = storageRef.child('Compressed_images/'+localStorage.getItem("userRegion")+"/" + fileName).put(blob);
     
@@ -113,6 +116,7 @@ function uploadCompressedToFirebaseStorage(blob, fileName, originalFile) {
             // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
             var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
             // console.log('Upload is ' + progress + '% done');
+            document.querySelector(".progressBarComp").style.width = progress + "%";
             switch (snapshot.state) {
                 case firebase.storage.TaskState.PAUSED: // or 'paused'
                     // console.log('Upload is paused');
@@ -125,10 +129,17 @@ function uploadCompressedToFirebaseStorage(blob, fileName, originalFile) {
         function(error) {
             // Handle unsuccessful uploads
             // console.error('Error uploading image:', error);
-            alert('An error occurred while uploading the image.');
+            // alert('An error occurred while uploading the image.');
+            document.querySelector(".progressBarComp").style.background = "background-image: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%)";
+            setTimeout(() => {
+                document.querySelector(".progressBarComp").style.width = 0;
+            }, 1500);
         }, 
         function() {
             // Handle successful uploads on complete
+            setTimeout(() => {
+                document.querySelector(".progressBarComp").style.width = 0;
+            }, 1200);
             uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
                 globalThis.compressedImageLink = downloadURL;
                 uploadOriginalImage(originalFile, fileName)
@@ -148,6 +159,7 @@ function uploadOriginalImage(originalFile, fileName)
     function(snapshot){
         var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
         // console.log('Upload is ' + progress + '% done');
+        document.querySelector(".progressBar").style.width = progress + "%";
         switch (snapshot.state) {
             case firebase.storage.TaskState.PAUSED: // or 'paused'
                 // console.log('Upload is paused');
@@ -160,11 +172,16 @@ function uploadOriginalImage(originalFile, fileName)
     function(error) {
         // Handle unsuccessful uploads
         // console.error('Error uploading image:', error);
+        document.querySelector(".progressBar").style.background = "background-image: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%)";
+        setTimeout(() => {
+            document.querySelector(".progressBar").style.width = 0;
+        }, 1500);
+        
     }, 
     function() {
         // Handle successful uploads on complete
         uploadTaskOrignal.snapshot.ref.getDownloadURL().then(function(downloadURL) {
-        
+            document.querySelector(".progressBar").style.width = 0;
           let timestamp = new Date().getTime();
        
           const dataToUpdate = {
@@ -180,8 +197,10 @@ function uploadOriginalImage(originalFile, fileName)
             location.replace("userData.html");
         }
 
-        document.getElementById("change_server").style.opacity = "1";
+    document.getElementById("change_server").style.opacity = "1";
     document.getElementById("change_server").style.pointerEvents = "all";
+    document.getElementById("uploadImages").style.opacity = "1";
+    document.getElementById("uploadImages").style.pointerEvents = "all";
     }
 );
 }

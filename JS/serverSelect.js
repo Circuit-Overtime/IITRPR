@@ -71,8 +71,9 @@ document.getElementById("selectServer").addEventListener("click", () => {
         serverDisplayText = "Connecting to "+checkedId+" Server..."
         typeWriterErrorHTML("serverError", serverDisplayText)
         setTimeout(() => {
-            document.querySelector(".loaderMask").style.opacity = "1";
-            document.querySelector(".loaderMask").style.zIndex = "100";
+            document.getElementById("loaderMask").style.zIndex = "100";
+            document.getElementById("loaderMask").style.opacity = "1";
+         
         }, 500);
         localStorage.setItem("userRegion", checkedId);
         db.collection("users").doc(localStorage.getItem("farmerPodUser")).update({
@@ -92,9 +93,10 @@ document.getElementById("selectServer").addEventListener("click", () => {
 
 window.onload = e => 
 {
-
-    document.querySelector(".loaderMask").style.opacity = "1";
-    document.querySelector(".loaderMask").style.zIndex = "100";
+    
+    document.getElementById("loaderMask").style.zIndex = "100";
+    document.getElementById("loaderMask").style.opacity = "1";
+    
 
     if(localStorage.getItem("farmerPodUser") == null)
     {

@@ -3,6 +3,35 @@ body
     overflow: hidden;
     background: #181818;
 }
+.progressBar
+{
+  position: absolute;
+  height: 15px;
+  width: 0%;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  transition: 0.5s;
+  top: 97.5%;
+  left: 0;
+  background-color: #FBAB7E;
+  background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+
+}
+
+.progressBarComp
+{
+  position: absolute;
+  height: 10px;
+  width: 0%;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  transition: 0.5s;
+  top: 98.5%;
+  left: 0;
+  background-color: #FA8BFF;
+  background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%);
+  
+}
 .change_server{
   position: absolute;
   top: 5%;
@@ -214,6 +243,25 @@ svg {
     object-fit: cover;
     width: 100%;
     display: inline-flex;
+    border-radius: 25px;
+    box-shadow: 10px 0 20px #181818;
+   
+  }
+
+
+  .uploadedImage
+  {
+    animation: fadeInAppear 2s linear forwards;
+  }
+  @keyframes fadeInAppear {
+    0%
+    {
+      opacity: 0;
+    }
+    100%
+    {
+      opacity: 1;
+    }
   }
   
   
@@ -272,6 +320,7 @@ svg {
     cursor: pointer;
     z-index: 12;
     border-radius: 25px;
+    transition: 0.5s;
 
 }
 .uploadImages span
@@ -289,13 +338,14 @@ svg {
     width: 20px;
     background-size: cover;
     pointer-events: none;
-    left: 10%;
-    top: 52%;
-    font-size: 21px;
-    color: #fff;
+    left: 12%;
+    top: 46%;
+    font-size: 25px;
+    color: rgb(0, 192, 80)
 }
 .uploadImages span:nth-child(2)
 {
-    left: 30%;
+    left: 31%;
+    font-size: 20px;
     font-weight: bolder;
 }

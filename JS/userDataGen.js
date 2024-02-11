@@ -103,7 +103,7 @@ document.getElementById("signup_button").addEventListener("click", () => {
 
 
 document.getElementById("signin_btn").addEventListener("click", () =>{
-    const loginName = document.getElementById("signinNameinp").value.trim().toLowerCase();
+    const loginName = document.getElementById("signinNameinp").value.toLowerCase().trim();
     const loginPass = document.getElementById("signinPasswordInp").value;
     document.querySelector(".loaderMask").style.zIndex = "100";
     document.querySelector(".loaderMask").style.opacity = "1";
