@@ -153,5 +153,6 @@ document.getElementById("logout").addEventListener("click", () => {
 
 document.getElementById("logout").addEventListener("dblclick", () => {
     localStorage.removeItem("farmerPodUser");
+    localStorage.getItem("userRegion") != null ? localStorage.removeItem("userRegion") : null;
     location.replace("userData.html");
 })
