@@ -63,7 +63,7 @@ Technologies used in the project:
 
 This project is licensed under the MIT License.
 
-## 💖 Like my work?
+## 💖 Like our project?
 
 Potential future enhancements for AgriLog.asm may include:
 - Integration of advanced analytics tools for data analysis and decision-making.
