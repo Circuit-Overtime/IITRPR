@@ -340,3 +340,83 @@ ul li label input[type = "checkbox"]:checked ~ .icon span
   button:hover {
     box-shadow: inset 0px 0px 25px #1479EA;
   }
+
+
+  @media only screen and (max-width: 768px) {
+    *
+    {
+        -webkit-tap-highlight-color : transparent;
+    }
+    body,html
+    {
+        height: -webkit-fill-available;
+        height: 100vh;
+        flex-direction: column;
+        max-width: 600px;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .logout{
+        position: absolute;
+        top: 2%;
+        left: 60%;
+        font-size: 30px;
+        filter: drop-shadow( 0 0 15px #ffc);
+        color: #ffc;
+        z-index: 10;
+        cursor: pointer;
+      }
+
+
+.serverError
+{
+  position: absolute;
+  top: 92%;
+  left: 50%;
+  width: 300px;
+    text-wrap: wrap;
+    text-align: center;
+    font-size: 15px;
+  transform: translateX(-50%);
+  font-family: 'Source Code Pro', monospace;
+  color: #ffc;
+  opacity: 0.6;
+}
+
+
+    .blob1,
+    .blob2
+    {
+        display: none;
+    }
+    .optionContainer {
+        display: flex;
+        position: absolute;
+        top: 30%;
+        left: 48.5%;
+        float: right;
+        width: 400px;
+        height: 300px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        background: transparent;
+    }
+    .optionContainer::-webkit-scrollbar
+    {
+        display: none;
+    }
+    
+    ul li {
+        width: calc(33.33% - px);
+        margin: 5px;
+    }
+    h1
+    {
+        font-size: 40px;
+        flex-wrap: wrap;
+        width: 20%;
+    }
+    
+}

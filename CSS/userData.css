@@ -767,3 +767,29 @@ body
       box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
     }
   }
+
+  @media only screen and (max-width: 500px) {
+    *
+    {
+        -webkit-tap-highlight-color : transparent;
+    }
+    .loginForm {
+        width: 90%; /* Adjusted width for smaller screens */
+        max-width: 300px; /* Maximum width to maintain readability */
+    }
+    .registerForm {
+        width: 90%; /* Adjusted width for smaller screens */
+        max-width: 300px; /* Maximum width to maintain readability */
+    }
+    .blob1,
+    .blob2
+    {
+        display: none;
+    }
+    .login
+    {
+        left: 88%;
+        top: 5%;
+    }
+
+}
