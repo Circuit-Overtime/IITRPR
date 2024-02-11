@@ -36,7 +36,7 @@ Here are some of the project's best features:
 
 1. **Register**: Use Email & Username
 2. **Login**: Use the Same Username and Password
-3. **Server**: Choose any of the 8 Servers
+3. **Server**: Choose any of the 9 Servers
 4. **Upload**: Upload Medias to the Selected Server
 5. **Logout**: Logout from the Server Selection Page (Double click the logout icon) when done
 
