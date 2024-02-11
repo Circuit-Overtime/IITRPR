@@ -1,4 +1,8 @@
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 600px) {
+    body
+    {
+        min-width: 300px;
+    }
     *
     {
         -webkit-tap-highlight-color : transparent;
