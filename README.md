@@ -69,7 +69,7 @@ Potential future enhancements for AgriLog.asm may include:
 - Integration of advanced analytics tools for data analysis and decision-making.
 - Implementation of real-time data synchronization for seamless collaboration among users.
 - Enhancement of user interface and user experience based on feedback and usability testing.
-
+- User Inputs are not Sanitized for this Project, taking into consideration that security is secondary in terms of the same.
 ```
 AgriLog.asm represents a collaborative effort aimed at addressing the challenges of agricultural data management. With its user-friendly interface, robust features, and scalable architecture, the system is poised to revolutionize the way farmers and administrators organize and utilize agricultural data, ultimately contributing to improved efficiency and productivity in the agricultural sector.
 ```
