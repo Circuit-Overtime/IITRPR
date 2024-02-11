@@ -121,7 +121,9 @@ svg {
     z-index: 120;
     font-family: "Orbitron", sans-serif;
     mix-blend-mode: overlay;
-    fill: #fff;
+    fill: #ffffff;
+    z-index: 50;
+    filter: drop-shadow(0 0 5px #ee0000) ;
     font-size: 2em;
     cursor: pointer;
   }
@@ -141,7 +143,8 @@ svg {
     border-radius : 10px;
     cursor: pointer;
     overflow: hidden;
-    z-index: 100;
+    z-index: 40;
+    opacity: 0.8;
     
     
   }  #wand > .cap
@@ -392,6 +395,8 @@ svg {
       transform: translateY(-310px) translateX(6%);
       font-size: 0.9em;
       z-index: 90;
+      fill: #ffffff;
+      filter: drop-shadow(0 0 5px #ee0000) ;
   }
   .change_server
   {
@@ -399,5 +404,13 @@ svg {
       left: 82%;
       color: #181818;
       font-size: 20px;
+  }
+  .progressBar
+  {
+    transition: 0.5s;
+  }
+  .progressBarComp
+  {
+    transition: 0.5s;
   }
 }
