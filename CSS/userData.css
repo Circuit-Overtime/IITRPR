@@ -553,7 +553,7 @@ body
   }
 
 
-  .registerForm .password-container #SeePwdRega {
+  .registerForm .password-container #SeePwdReg {
     position: absolute;
     left: 84%;
     cursor: pointer;
